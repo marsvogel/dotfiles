@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+typeset -A files_to_symlink
+
+dotfiles=$(dirname $0:A)
+
+files_to_symlink=(
+    $dotfiles/gitconfig $HOME/.gitconfig
+    $dotfiles/zsh $HOME/.zsh
+    $dotfiles/zshrc $HOME/.zshrc
+)
+
+for k in "${(@k)files_to_symlink}"; do
+  ln -fs $k $files_to_symlink[$k]
+  echo "$k -> $files_to_symlink[$k]"
+done
+
+unset files_to_symlink
+unset dotfiles
+
