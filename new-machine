@@ -1,0 +1,11 @@
+#!/bin/env zsh
+
+# 1. Set correct timezone
+sudo systemsetup -settimezone 'Europe/Berlin'
+# 2. Install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# 5. Install the new zsh
+brew install zsh
+# 6. Change login shell
+sudo chsh -s $(which zsh) $USER
+
