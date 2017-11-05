@@ -1,7 +1,9 @@
 # Ignore everything except the dotfiles. This way I hopefully won't need
 # any dotfile framework :)
-*
+/*
+
 !.gitignore
-!.zsh
 !.zshrc
 !.gitconfig
+
+!/.zsh
